@@ -1,0 +1,20 @@
+see https://developer.okta.com/blog/2019/11/19/java-kafka
+
+# Start the ZooKeeper service
+# Note: Soon, ZooKeeper will no longer be required by Apache Kafka.
+$ bin/zookeeper-server-start.sh config/zookeeper.properties
+Open another terminal session and run:
+
+# Start the Kafka broker service
+$ bin/kafka-server-start.sh config/server.properties
+Once all services have successfully launched, you will have a basic Kafka environment running and ready to use.
+
+Create a Kafka Topic
+Now that you have the broker and Zookeeper running, you can specify a topic to start sending messages from a producer. You’re going to run a command inside the bin folder, just like you did in the previous steps:
+
+./kafka-topics.sh --create --topic myTopic -zookeeper \
+ localhost:2181 --replication-factor 1 --partitions 1
+ 
+ http://localhost:8089/kafka-java-server/kafka/produce?message=Test%20Message
+ 
+ http://localhost:8089/kafka-java-server/kafka/messages
